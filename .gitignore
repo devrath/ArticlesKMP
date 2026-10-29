@@ -1,12 +1,20 @@
-# Gradle files
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- Gradle files ----------
 .gradle/
 build/
 .kotlin/
+kotlin-js-store/
+# Keep the wrapper jar so ./gradlew works on a fresh clone
+!gradle/wrapper/gradle-wrapper.jar
 
 # Local configuration file (sdk path, etc)
 local.properties
 
-# Log/OS Files
+# Log Files
 *.log
 
 # Android Studio generated files and folders
@@ -15,14 +23,23 @@ captures/
 .cxx/
 *.aab
 *.apk
+*.ap_
+*.dex
 output-metadata.json
 
-# IntelliJ
+# IntelliJ / Fleet
 *.iml
+*.ipr
+*.iws
 .idea/
+.fleet/
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
+out/
+
+# VS Code
+.vscode/
 
 # Keystore files
 *.jks
@@ -30,6 +47,7 @@ render.experimental.xml
 
 # Google Services (e.g. APIs or Firebase)
 google-services.json
+GoogleService-Info.plist
 
 # Android Profiling
 *.hprof
