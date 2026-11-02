@@ -27,11 +27,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ArticlesScreen(
-                        articlesViewModel = articlesViewModel,
-                        onAboutButtonClick = {
-
-                        }
+                    AppScaffold(
+                        articlesViewModel = articlesViewModel
                     )
                 }
             }

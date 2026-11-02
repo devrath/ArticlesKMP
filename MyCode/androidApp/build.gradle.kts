@@ -19,6 +19,7 @@ dependencies {
     implementation(libs.compose.uiToolingPreview)
     debugImplementation(libs.compose.uiTooling)
 
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.coil.compose)
 }
 

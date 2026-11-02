@@ -18,6 +18,7 @@ androidxComposeMaterialIcons = "1.7.8"
 lifecycleViewmodelKtx = "2.11.0"
 kotlinxCoroutinesCore = "1.11.0"
 coilCompose = "2.7.0"
+navigationCompose = "2.7.5"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -37,6 +38,7 @@ compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", v
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
 androidx-compose-material-icons-core = { module = "androidx.compose.material:material-icons-core", version.ref = "androidxComposeMaterialIcons" }
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "androidxComposeMaterialIcons" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
 compose-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatform" }
