@@ -9,8 +9,8 @@ import kotlin.time.Duration.Companion.milliseconds
 
 class ArticlesViewModel : BaseViewModel() {
 
-    private val _articleState: MutableStateFlow<ArticleState> = MutableStateFlow(ArticleState(loading = true))
-    val articleState: StateFlow<ArticleState> get() = _articleState
+    private val _articlesState: MutableStateFlow<ArticleState> = MutableStateFlow(ArticleState(loading = true))
+    val articlesState: StateFlow<ArticleState> get() = _articlesState
 
 
     init {
@@ -21,7 +21,7 @@ class ArticlesViewModel : BaseViewModel() {
         scope.launch {
             val fetchArticles = fetchArticles()
             delay(1000L.milliseconds)
-            _articleState.emit(ArticleState(articles = fetchArticles))
+            _articlesState.emit(ArticleState(articles = fetchArticles))
         }
     }
 

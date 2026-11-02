@@ -15,9 +15,11 @@ dependencies {
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.compose.material3)
+    implementation(libs.androidx.compose.material.icons.core)
     implementation(libs.compose.uiToolingPreview)
     debugImplementation(libs.compose.uiTooling)
 
+    implementation(libs.coil.compose)
 }
 
 android {
