@@ -47,7 +47,7 @@ fun ArticlesScreen(
         if (articlesState.value.error != null)
             ErrorMessage(articlesState.value.error!!)
         if (articlesState.value.articles.isNotEmpty())
-            ArticlesListView(articlesViewModel.articlesState.collectAsState().value.articles)
+            ArticlesListView(articlesState.value.articles)
     }
 }
 

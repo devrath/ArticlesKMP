@@ -9,23 +9,8 @@ import kotlin.time.Duration.Companion.milliseconds
 
 class ArticlesViewModel : BaseViewModel() {
 
-    private val _articlesState: MutableStateFlow<ArticleState> = MutableStateFlow(ArticleState(loading = true))
+    private val _articlesState: MutableStateFlow<ArticleState> = MutableStateFlow(ArticleState(articles = emptyList(), loading = true))
     val articlesState: StateFlow<ArticleState> get() = _articlesState
-
-
-    init {
-        getArticles()
-    }
-
-    private fun getArticles(){
-        scope.launch {
-            val fetchArticles = fetchArticles()
-            delay(1000L.milliseconds)
-            _articlesState.emit(ArticleState(articles = fetchArticles))
-        }
-    }
-
-    private suspend fun fetchArticles(): List<Article> = mockArticles
 
     private val mockArticles = listOf(
         Article(
@@ -47,5 +32,19 @@ class ArticlesViewModel : BaseViewModel() {
             "https://cdn.vox-cdn.com/thumbor/Ocz_QcxUdtaexp1pPTMygaqzbR8=/0x0:2000x1333/1200x628/filters:focal(1000x667:1001x668)/cdn.vox-cdn.com/uploads/chorus_asset/file/24396795/DSC04128_processed.jpg",
         ),
     )
+
+    init {
+        getArticles()
+    }
+
+    private fun getArticles(){
+        scope.launch {
+            val fetchArticles = fetchArticles()
+            delay(1000L.milliseconds)
+            _articlesState.emit(ArticleState(articles = fetchArticles, loading = false))
+        }
+    }
+
+    private suspend fun fetchArticles(): List<Article> = mockArticles
 
 }
