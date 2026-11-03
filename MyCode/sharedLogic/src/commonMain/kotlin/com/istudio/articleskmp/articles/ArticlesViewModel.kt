@@ -11,12 +11,12 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import kotlin.time.Duration.Companion.milliseconds
 
-class ArticlesViewModel : BaseViewModel() {
+class ArticlesViewModel(
+    private val useCase: ArticlesUseCase
+) : BaseViewModel() {
 
     private val _articlesState: MutableStateFlow<ArticleState> = MutableStateFlow(ArticleState(articles = emptyList(), loading = true))
     val articlesState: StateFlow<ArticleState> get() = _articlesState
-
-    private val useCase: ArticlesUseCase
 
     init {
         val httpClient = HttpClient {
@@ -28,8 +28,6 @@ class ArticlesViewModel : BaseViewModel() {
                 })
             }
         }
-        val service = ArticlesService(httpClient)
-        useCase = ArticlesUseCase(service)
 
         getArticles()
     }
